@@ -3,6 +3,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import Card from './Card';
+import { changeMinNumber, changeMaxNumber } from '../store/actions/numbers';
 
 const Range = (props) => {
 	const { min, max } = props;
@@ -30,4 +31,14 @@ const mapStateToProps = (state) => {
 	};
 };
 
-export default connect(mapStateToProps)(Range);
+const mapActionCreatorsToProps = (dispatch) => {
+	return {
+		changeMinNum(newNumber) {
+			//action creator => action
+			const action = changeMinNumber(newNumber);
+			dispatch(action);
+		},
+	};
+};
+
+export default connect(mapStateToProps, mapActionCreatorsToProps)(Range);

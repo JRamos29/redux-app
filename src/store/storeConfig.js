@@ -4,11 +4,28 @@ import {
 } from 'redux';
 
 const reducers = combineReducers({
+
     numbers: function (state, action) {
-        return {
-            min: 7,
-            max: 31
+
+        switch (action.type) {
+            case 'CHANGE_MIN_NUM':
+                return {
+                    ...state,
+                    min: action.payload
+                };
+            case 'CHANGE_MAX_NUM':
+                return {
+                    ...state,
+                    max: action.payload
+                };
+            default:
+                return {
+                    min: 7,
+                        max: 31
+                };
         }
+
+
     }
 });
 
