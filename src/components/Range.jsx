@@ -13,11 +13,19 @@ const Range = (props) => {
 			<div className="Range">
 				<span>
 					<strong>Min:</strong>
-					<input type="number" value={min} readOnly />
+					<input
+						type="number"
+						value={min}
+						onChange={(e) => props.changeMin(+e.target.value)}
+					/>
 				</span>
 				<span>
 					<strong>Max:</strong>
-					<input type="number" value={max} readOnly />
+					<input
+						type="number"
+						value={max}
+						onChange={(e) => props.changeMax(+e.target.value)}
+					/>
 				</span>
 			</div>
 		</Card>
@@ -31,14 +39,19 @@ const mapStateToProps = (state) => {
 	};
 };
 
-const mapActionCreatorsToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch) => {
 	return {
-		changeMinNum(newNumber) {
+		changeMin(newNumber) {
 			//action creator => action
 			const action = changeMinNumber(newNumber);
+			dispatch(action);
+		},
+		changeMax(newNumber) {
+			//action creator => action
+			const action = changeMaxNumber(newNumber);
 			dispatch(action);
 		},
 	};
 };
 
-export default connect(mapStateToProps, mapActionCreatorsToProps)(Range);
+export default connect(mapStateToProps, mapDispatchToProps)(Range);

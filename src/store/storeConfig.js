@@ -24,8 +24,6 @@ const reducers = combineReducers({
                         max: 31
                 };
         }
-
-
     }
 });
 
