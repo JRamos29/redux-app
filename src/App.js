@@ -1,6 +1,8 @@
 import './App.css';
-import Card from './components/Card';
 import Range from './components/Range';
+import Average from './components/Average';
+import Sum from './components/Sum';
+import Random from './components/Random';
 
 function App() {
 	return (
@@ -10,15 +12,9 @@ function App() {
 				<Range></Range>
 			</div>
 			<div className="row">
-				<Card title="Card 2" green>
-					X
-				</Card>
-				<Card title="Card 3" blue>
-					Y
-				</Card>
-				<Card title="Card 4" purple>
-					Y
-				</Card>
+				<Average></Average>
+				<Sum></Sum>
+				<Random></Random>
 			</div>
 		</div>
 	);
