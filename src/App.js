@@ -1,20 +1,18 @@
-import logo from './logo.svg';
 import './App.css';
 import Card from './components/Card';
+import Range from './components/Range';
 
 function App() {
 	return (
 		<div className="App">
 			<h1>React Redux Learning</h1>
 			<div className="row">
-				<Card title="Card 1" red>
-					X
-				</Card>
+				<Range></Range>
+			</div>
+			<div className="row">
 				<Card title="Card 2" green>
 					X
 				</Card>
-			</div>
-			<div className="row">
 				<Card title="Card 3" blue>
 					Y
 				</Card>
